@@ -28,6 +28,16 @@ def main():
         else:
             st.error("Error submitting the form. Please try again.")
 
+    # Use JavaScript to scroll to the top
+    st.markdown(
+        """
+        <script>
+            window.scrollTo(0, 0);
+        </script>
+        """,
+        unsafe_allow_html=True,
+    )
+
 
 if __name__ == "__main__":
     print("Starting the main function...")

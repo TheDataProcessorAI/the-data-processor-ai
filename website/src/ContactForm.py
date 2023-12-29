@@ -9,7 +9,6 @@ class ContactForm:
 
     def create_contact_form(self):
         with st.form(key=self.form_key, clear_on_submit=True):
-            st.write("---")
             st.header("Get In Touch!")
             st.write("##")
 
