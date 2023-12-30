@@ -3,8 +3,12 @@ import streamlit as st
 import requests as req
 from datetime import datetime
 
+
 class ContactForm:
     def __init__(self):
+        self.message = None
+        self.email = None
+        self.name = None
         self.form_key = 'contact-form'
 
     def create_contact_form(self):
@@ -26,6 +30,7 @@ class ContactForm:
 
     def handle_form_submission(self):
         print(f"Name: {self.name}, Email: {self.email}, Message: {self.message}")
-        response = req.post("https://formsubmit.co/info@thedataprocessor.ai", data={"name": self.name, "email": self.email, "message": self.message})
+        response = req.post("https://formsubmit.co/info@thedataprocessor.ai",
+                            data={"name": self.name, "email": self.email, "message": self.message})
         print("response_status_code ", response.status_code)
         return response

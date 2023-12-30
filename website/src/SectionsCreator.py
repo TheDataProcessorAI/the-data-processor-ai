@@ -3,6 +3,29 @@ import streamlit as st
 from streamlit_lottie import st_lottie
 from src.AssetsLoader import AssetsLoader
 
+
+def create_company_header():
+    # -- HEADER -- #
+    st.title("Data Processor AI")
+    st.subheader("Unlocking Business Potential with AI-Powered Insights. 🤖")
+    st.markdown("[Learn More](https://thedataprocessor.ai/)")
+
+
+def create_generative_ai_section():
+    # -- GENERATIVE AI CAPABILITIES -- #
+    st.header("Generative AI Capabilities")
+    st.write(
+        "Explore our cutting-edge Generative AI capabilities that enable businesses to harness the power of artificial intelligence for creative and innovative solutions.")
+    st.write("""
+        - **Creative Content Generation:** Leverage our Generative AI models to create high-quality and engaging content, from images to text.
+        - **Innovative Design Solutions:** Drive innovation in design with AI-generated concepts and prototypes.
+        - **Personalized Recommendations:** Provide personalized recommendations to users based on their preferences and behavior.
+        - **Automated Creative Processes:** Streamline creative workflows by automating repetitive tasks using Generative AI.
+        - **Customized AI Models:** Develop custom Generative AI models tailored to your specific business needs.
+    """)
+    st.write("[Learn More](https://thedataprocessor.ai/generative-ai)")
+
+
 class SectionsCreator:
     def __init__(self):
         pass
@@ -10,30 +33,11 @@ class SectionsCreator:
     def create_sections(self):
         assets_loader = AssetsLoader()
         lottie_animations = assets_loader.load_assets()
-        self.create_company_header()
+        create_company_header()
 
-        self.create_generative_ai_section()
+        create_generative_ai_section()
         self.create_what_we_do_section()
         self.create_our_services_section(lottie_animations)
-    def create_company_header(self):
-        # -- HEADER -- #
-        st.title("Data Processor AI")
-        st.subheader("Unlocking Business Potential with AI-Powered Insights. 🤖")
-        st.markdown("[Learn More](https://thedataprocessor.ai/)")
-
-    def create_generative_ai_section(self):
-        # -- GENERATIVE AI CAPABILITIES -- #
-        st.header("Generative AI Capabilities")
-        st.write(
-            "Explore our cutting-edge Generative AI capabilities that enable businesses to harness the power of artificial intelligence for creative and innovative solutions.")
-        st.write("""
-            - **Creative Content Generation:** Leverage our Generative AI models to create high-quality and engaging content, from images to text.
-            - **Innovative Design Solutions:** Drive innovation in design with AI-generated concepts and prototypes.
-            - **Personalized Recommendations:** Provide personalized recommendations to users based on their preferences and behavior.
-            - **Automated Creative Processes:** Streamline creative workflows by automating repetitive tasks using Generative AI.
-            - **Customized AI Models:** Develop custom Generative AI models tailored to your specific business needs.
-        """)
-        st.write("[Learn More](https://thedataprocessor.ai/generative-ai)")
 
     def create_what_we_do_section(self):
         st.header("What We Do")
