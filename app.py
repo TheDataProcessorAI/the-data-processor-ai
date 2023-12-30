@@ -33,18 +33,17 @@ def show_contact_us_page():
                 st.error("Error submitting the form. Please try again.")
 
     with col2:
+        google_maps_api_key = "AIzaSyBKm4__7J3jfjcBk3c978pqMUVLvRnBXDs"
+        office_address = "Sobha Dream Gardens Bangalore"
+        encoded_address = "+".join(office_address.split(" "))
+        google_maps_url = f"https://www.google.com/maps/embed/v1/place?key={google_maps_api_key}&q={encoded_address}"
         # Google Map Location
         hy.markdown(
+
+
             """
             ## Google Map Location
-            <iframe
-                width="600"
-                height="350"
-                style="border:0"
-                loading="lazy"
-                allowfullscreen
-                src="https://www.google.com/maps/place/SOBHA+Dream+Gardens+(Residential+Apartments+in+Thanisandra)/@13.0986671,77.6412999,15z/data=!4m6!3m5!1s0x3bae19261265aa95:0xcc6de8ac0fc6561f!8m2!3d13.0986671!4d77.6412999!16s%2Fg%2F11f7760crx?entry=ttu"
-            ></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.0081116385077!2d77.63872497565771!3d13.098672312078355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae19261265aa95%3A0xcc6de8ac0fc6561f!2sSOBHA%20Dream%20Gardens%20(Residential%20Apartments%20in%20Thanisandra)!5e0!3m2!1sen!2sin!4v1703934449813!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             """,
             unsafe_allow_html=True,
         )
@@ -98,10 +97,13 @@ def show_about_us_page():
 
     # Values
     st.header("Our Values")
-    st.write("We are guided by a set of core values that define who we are and how we operate:")
-    st.write("- **Innovation:** We embrace creativity and continually seek innovative solutions.")
+    st.write(
+        "We are guided by a set of core values that define who we are and how we operate:")
+    st.write(
+        "- **Innovation:** We embrace creativity and continually seek innovative solutions.")
     st.write("- **Precision:** Our commitment to precision ensures that our solutions are accurate and impactful.")
-    st.write("- **Integrity:** We uphold the highest standards of integrity in all our interactions.")
+    st.write(
+        "- **Integrity:** We uphold the highest standards of integrity in all our interactions.")
     st.write(
         "- **Collaboration:** Collaboration is at the heart of our approach, both within our team and with our clients.")
 
@@ -132,10 +134,6 @@ def show_careers_page():
     if job_application.create_job_application_form():
         # Retrieve form input values
         job_application.handle_job_form_submission()
-
-
-
-
 
 
 def main():
