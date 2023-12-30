@@ -6,7 +6,7 @@ from src.AssetsLoader import AssetsLoader
 
 def create_company_header():
     # -- HEADER -- #
-    st.title("Data Processor AI")
+    # insert logo stored in resources folder here
     st.subheader("Unlocking Business Potential with AI-Powered Insights. 🤖")
     st.markdown("[Learn More](https://thedataprocessor.ai/)")
 
