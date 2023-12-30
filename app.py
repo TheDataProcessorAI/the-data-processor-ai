@@ -138,28 +138,56 @@ def show_careers_page():
 
 def main():
     print("Initializing PageConfig...")
-    page_config = PageConfig("Data Processor AI", "resources/box.png")
+    page_config = PageConfig("Data Processor AI", "resources/favicon.png")
     page_config.configure_page()
+    margins_css = """
+                    <style>
+                        .main > div {
+                            padding-top: 0rem;
+                            padding-right: 0rem;
+                        }
+                    </style>
+                    """
 
-    app = hy.HydraApp(title='The Data Processor AI')
-    if app is None:
-        print("Error: 'app' is None. Check HydraApp initialization.")
+    st.markdown(margins_css, unsafe_allow_html=True)
+    col1, col2 = st.columns([1, 4])
+    with col1:
+        st.image("resources/logo.png", width=200)
 
-    @app.addapp("Home ")
-    def home():
-        show_home_page()
+    with col2:
 
-    @app.addapp("About Us")
-    def about_us():
-        show_about_us_page()
+        st.markdown(
+            """
+            <style>
+                .streamlit-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: right;
+                }
+            </style>
+            """,
+            unsafe_allow_html=True,
+        )
 
-    @app.addapp("Contact")
-    def contact_us():
-        show_contact_us_page()
+        app = hy.HydraApp(title='The Data Processor AI')
+        if app is None:
+            print("Error: 'app' is None. Check HydraApp initialization.")
 
-    @app.addapp("Careers ")
-    def career():
-        show_careers_page()
+        @app.addapp("Home ")
+        def home():
+            show_home_page()
+
+        @app.addapp("About Us")
+        def about_us():
+            show_about_us_page()
+
+        @app.addapp("Contact")
+        def contact_us():
+            show_contact_us_page()
+
+        @app.addapp("Careers ")
+        def career():
+            show_careers_page()
 
     app.run()
 
