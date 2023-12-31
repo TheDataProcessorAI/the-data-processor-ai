@@ -36,90 +36,144 @@ class Footer:
             unsafe_allow_html=True
         )
         st.markdown("<hr>", unsafe_allow_html=True)
-        image_col, hyperlinks_col = st.columns([1,5])
+        image_col, hyperlinks_col = st.columns([1, 5])
         with image_col:
             st.image("resources/logo.png", width=150, use_column_width=False)
 
         with hyperlinks_col:
-            col1, col2, col3, col4 = st.columns(4)
+            col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
             with col1:
-                st.markdown("<p>AI Platform</p>", unsafe_allow_html=True)
                 # AI Platform Section
-                st.markdown('<a href="/ai-platform/overview">Overview</a> | <a '
-                            'href="/ai-platform/features">Features</a> | <a href="/ai-platform/co-pilot">Co-Pilot</a> '
-                            '| <a href="/ai-platform/integrations">Integrations</a> | <a '
-                            'href="/ai-platform/documentation">Documentation</a> | <a '
-                            'href="/ai-platform/security">Security</a>',
+                st.markdown("<p style='margin-bottom: 5px;'><b>AI Platform</b></p>", unsafe_allow_html=True)
+                st.markdown('<a href="/ai-platform/overview" style="margin-bottom: 5px; display: block;">Overview</a>',
                             unsafe_allow_html=True)
+                st.markdown('<a href="/ai-platform/features" style="margin-bottom: 5px; display: block;">Features</a>',
+                            unsafe_allow_html=True)
+                st.markdown('<a href="/ai-platform/co-pilot" style="margin-bottom: 5px; display: block;">Co-Pilot</a>',
+                            unsafe_allow_html=True)
+                st.markdown(
+                    '<a href="/ai-platform/integrations" style="margin-bottom: 5px; display: block;">Integrations</a>',
+                    unsafe_allow_html=True)
+                st.markdown(
+                    '<a href="/ai-platform/documentation" style="margin-bottom: 5px; display: block;">Documentation</a>',
+                    unsafe_allow_html=True)
+                st.markdown('<a href="/ai-platform/security" style="margin-bottom: 5px; display: block;">Security</a>',
+                            unsafe_allow_html=True)
+
+
             with col2:
                 # Use Cases Section
-                st.markdown("<p>Use Cases</p>", unsafe_allow_html=True)
+                st.markdown("<p style='margin-bottom: 5px;'><b>Use Cases</b></p>", unsafe_allow_html=True)
                 st.markdown(
-                    '<a href="/use-cases/generative-ai">Generative AI</a> | <a '
-                    'href="/use-cases/market-intelligence">Market Intelligence</a> | <a '
-                    'href="/use-cases/analytics-bi">Analytics & BI</a> | <a '
-                    'href="/use-cases/automation">Automation</a> | <a href="/use-cases/all-use-cases">All Use '
-                    'Cases</a>',
+                    '<a href="/use-cases/generative-ai" style="margin-bottom: 5px; display: block;">Generative AI</a>',
+                    unsafe_allow_html=True)
+                st.markdown(
+                    '<a href="/use-cases/market-intelligence" style="margin-bottom: 5px; display: block;">Market Intelligence</a>',
+                    unsafe_allow_html=True)
+                st.markdown(
+                    '<a href="/use-cases/analytics-bi" style="margin-bottom: 5px; display: block;">Analytics & BI</a>',
+                    unsafe_allow_html=True)
+                st.markdown(
+                    '<a href="/use-cases/automation" style="margin-bottom: 5px; display: block;">Automation</a>',
+                    unsafe_allow_html=True)
+                st.markdown(
+                    '<a href="/use-cases/all-use-cases" style="margin-bottom: 5px; display: block;">All Use Cases</a>',
                     unsafe_allow_html=True)
 
             with col3:
                 # Professional Services Section
-                st.markdown("<p>Professional Services</p>", unsafe_allow_html=True)
-                st.markdown('<a href="/professional-services/overview">Services Overview</a> | <a '
-                            'href="/professional-services/ai-copilots">AI-Copilots</a> | <a '
-                            'href="/professional-services/data-ai-strategy">Data & AI Strategy</a> | <a '
-                            'href="/professional-services/low-code-development">Low Code App Development</a>',
-                            unsafe_allow_html=True)
+                st.markdown("<p style='margin-bottom: 5px;'><b>Professional Services</b></p>", unsafe_allow_html=True)
+                st.markdown(
+                    '<a href="/professional-services/overview" style="margin-bottom: 5px; display: block;">Services Overview</a>',
+                    unsafe_allow_html=True)
+                st.markdown(
+                    '<a href="/professional-services/ai-copilots" style="margin-bottom: 5px; display: block;">AI-Copilots</a>',
+                    unsafe_allow_html=True)
+                st.markdown(
+                    '<a href="/professional-services/data-ai-strategy" style="margin-bottom: 5px; display: block;">Data & AI Strategy</a>',
+                    unsafe_allow_html=True)
+                st.markdown(
+                    '<a href="/professional-services/low-code-development" style="margin-bottom: 5px; display: block;">Low Code App Development</a>',
+                    unsafe_allow_html=True)
+
             with col4:
                 # Expertise Section
-                st.markdown("<p>Expertise</p>", unsafe_allow_html=True)
+                st.markdown("<p style='margin-bottom: 5px;'><b>Expertise</b></p>", unsafe_allow_html=True)
                 st.markdown(
-                        '<a href="/expertise/microsoft-azure">Microsoft Azure</a> | <a href="/expertise/aws">Amazon '
-                        'Web Services</a> | <a href="/expertise/google-cloud">Google Cloud Project</a> | <a '
-                        'href="/expertise/power-bi">Microsoft Power BI</a> | <a '
-                        'href="/expertise/streamlit">Streamlit</a> | <a href="/expertise/databricks">Databricks</a> | '
-                        '<a href="/expertise/snowflake">Snowflake</a> | <a href="/expertise/all-expertise">See all</a>',
-                        unsafe_allow_html=True)
+                    '<a href="/expertise/microsoft-azure" style="margin-bottom: 5px; display: block;">Microsoft Azure</a>',
+                    unsafe_allow_html=True)
+                st.markdown(
+                    '<a href="/expertise/aws" style="margin-bottom: 5px; display: block;">Amazon Web Services</a>',
+                    unsafe_allow_html=True)
+                st.markdown(
+                    '<a href="/expertise/google-cloud" style="margin-bottom: 5px; display: block;">Google Cloud Project</a>',
+                    unsafe_allow_html=True)
+                st.markdown(
+                    '<a href="/expertise/power-bi" style="margin-bottom: 5px; display: block;">Microsoft Power BI</a>',
+                    unsafe_allow_html=True)
+                st.markdown('<a href="/expertise/streamlit" style="margin-bottom: 5px; display: block;">Streamlit</a>',
+                            unsafe_allow_html=True)
+                st.markdown(
+                    '<a href="/expertise/databricks" style="margin-bottom: 5px; display: block;">Databricks</a>',
+                    unsafe_allow_html=True)
+                st.markdown('<a href="/expertise/snowflake" style="margin-bottom: 5px; display: block;">Snowflake</a>',
+                            unsafe_allow_html=True)
+                st.markdown(
+                    '<a href="/expertise/all-expertise" style="margin-bottom: 5px; display: block;">See all</a>',
+                    unsafe_allow_html=True)
 
             with col1:
                 # Industries Section
-                st.markdown("<p>Industries</p>", unsafe_allow_html=True)
+                st.markdown("<p style='margin-bottom: 5px;'><b>Industries</b></p>", unsafe_allow_html=True)
                 st.markdown(
-                    '<a href="/industries/retail-fmcg">Retail & FMCG</a> | <a '
-                    'href="/industries/banking-finance">Banking & Finance</a> | <a '
-                    'href="/industries/healthcare">Healthcare</a> | <a href="/industries/other-industries">Other '
-                    'Industries</a>',
+                    '<a href="/industries/retail-fmcg" style="margin-bottom: 5px; display: block;">Retail & FMCG</a>',
+                    unsafe_allow_html=True)
+                st.markdown(
+                    '<a href="/industries/banking-finance" style="margin-bottom: 5px; display: block;">Banking & Finance</a>',
+                    unsafe_allow_html=True)
+                st.markdown(
+                    '<a href="/industries/healthcare" style="margin-bottom: 5px; display: block;">Healthcare</a>',
+                    unsafe_allow_html=True)
+                st.markdown(
+                    '<a href="/industries/other-industries" style="margin-bottom: 5px; display: block;">Other Industries</a>',
                     unsafe_allow_html=True)
 
             with col2:
                 # Training & Events Section
-                st.markdown("<p>Training & Events</p>", unsafe_allow_html=True)
+                st.markdown("<p style='margin-bottom: 5px;'><b>Training & Events</b></p>", unsafe_allow_html=True)
                 st.markdown(
-                    '<a href="/training-events/private-training">Private Training</a> | <a '
-                    'href="/training-events/user-groups">User Groups</a> | <a '
-                    'href="/training-events/events">Events</a>',
+                    '<a href="/training-events/private-training" style="margin-bottom: 5px; display: block;">Private Training</a>',
                     unsafe_allow_html=True)
+                st.markdown(
+                    '<a href="/training-events/user-groups" style="margin-bottom: 5px; display: block;">User Groups</a>',
+                    unsafe_allow_html=True)
+                st.markdown('<a href="/training-events/events" style="margin-bottom: 5px; display: block;">Events</a>',
+                            unsafe_allow_html=True)
 
             with col3:
                 # Resources Section
-                st.markdown("<p>Resources</p>", unsafe_allow_html=True)
+                st.markdown("<p style='margin-bottom: 5px;'><b>Resources</b></p>", unsafe_allow_html=True)
                 st.markdown(
-                    '<a href="/resources/case-studies">Case Studies</a> | <a href="/resources/updates">Updates</a> | '
-                    '<a href="/resources/news-blogs">News & Blogs</a>',
+                    '<a href="/resources/case-studies" style="margin-bottom: 5px; display: block;">Case Studies</a>',
+                    unsafe_allow_html=True)
+                st.markdown('<a href="/resources/updates" style="margin-bottom: 5px; display: block;">Updates</a>',
+                            unsafe_allow_html=True)
+                st.markdown(
+                    '<a href="/resources/news-blogs" style="margin-bottom: 5px; display: block;">News & Blogs</a>',
                     unsafe_allow_html=True)
 
             with col4:
                 # Company Section
-                st.markdown("<p>Company</p>", unsafe_allow_html=True)
+                st.markdown("<p style='margin-bottom: 5px;'><b>Company</b></p>", unsafe_allow_html=True)
                 st.markdown(
-                    '<a href="/company/meet-the-team">Meet the Team</a> | <a href="/company/careers">Careers</a> | <a '
-                    'href="/company/contact-us">Contact Us</a> | <a href="/company/support">Support</a>',
+                    '<a href="/company/meet-the-team" style="margin-bottom: 5px; display: block;">Meet the Team</a>',
                     unsafe_allow_html=True)
-
-        # Use Font Awesome icons for social media
-        st.markdown(
-            '<script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>',
-            unsafe_allow_html=True)
+                st.markdown('<a href="/company/careers" style="margin-bottom: 5px; display: block;">Careers</a>',
+                            unsafe_allow_html=True)
+                st.markdown('<a href="/company/contact-us" style="margin-bottom: 5px; display: block;">Contact Us</a>',
+                            unsafe_allow_html=True)
+                st.markdown('<a href="/company/support" style="margin-bottom: 5px; display: block;">Support</a>',
+                            unsafe_allow_html=True)
 
         st.markdown(
             """
@@ -134,22 +188,12 @@ class Footer:
             unsafe_allow_html=True
         )
 
-
-
-        # # Social Media Icons
-        # twitter_x = "resources/twitter_X.png"
-        # instagram = "resources/instagram.png"
-        # linked_in = "resources/linked_in.png"
-        # image_paths = [twitter_x, instagram, linked_in]
-        #
-        # Helper.display_images_side_by_side(image_paths)
-
         st.markdown("<hr>", unsafe_allow_html=True)
+
+
         # Center-align the copyright information directly in the markdown
-        st.markdown("<p style='text-align: center;'>&copy; 2024 Data Processor AI. All rights reserved.</p>",
+        st.markdown("<p style='text-align: center;'>&copy; 2024 Data Processor AI . All rights reserved.</p>",
                     unsafe_allow_html=True)
-
-
 
         # Provide links and content for "Terms of Use" and "Privacy Policy"
         st.markdown(
