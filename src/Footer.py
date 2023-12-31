@@ -36,9 +36,9 @@ class Footer:
             unsafe_allow_html=True
         )
         st.markdown("<hr>", unsafe_allow_html=True)
-        image_col, hyperlinks_col = st.columns([1,3])
+        image_col, hyperlinks_col = st.columns([1,5])
         with image_col:
-            st.image("resources/logo.png", width=200, use_column_width=False)
+            st.image("resources/logo.png", width=150, use_column_width=False)
 
         with hyperlinks_col:
             col1, col2, col3, col4 = st.columns(4)

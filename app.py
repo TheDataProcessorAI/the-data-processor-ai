@@ -131,14 +131,18 @@ def main():
     print("Initializing PageConfig...")
     page_config = PageConfig("Data Processor AI", "resources/favicon.png")
     page_config.configure_page()
+    # Add custom CSS for equal spacing
     margins_css = """
-                    <style>
-                        .main > div {
-                            padding-top: 0rem;
-                            padding-right: 0rem;
+            <style>
+                .streamlit-container {
+                    margin: 20px; /* Adjust the margin value as needed */
+                }
+                .main > div {
+                            padding-top: 20px;
+                            padding-right: 20px;
                         }
-                    </style>
-                    """
+            </style>
+        """
     st.markdown(margins_css, unsafe_allow_html=True)
     col1, col2 = st.columns([1, 3])
     with col1:
