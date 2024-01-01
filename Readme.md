@@ -1,4 +1,26 @@
-The Data Processor AI
+## The Data Processor AI
+
+## Directory Structure 
+- app/
+  - main.py
+- src/
+  - __init__.py
+  - assets/
+    - __init__.py
+    - assets_loader.py
+  - pages/
+    - __init__.py
+    - page_config.py
+    - sections_creator.py
+  - forms/
+    - __init__.py
+    - contact_form.py
+    - job_application_form.py
+  - components/
+    - __init__.py
+    - footer.py
+    - helper.py
+
 ## Installation
 
 1. Clone the repository:

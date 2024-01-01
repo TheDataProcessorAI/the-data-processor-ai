@@ -6,6 +6,7 @@ from src.ContactForm import ContactForm
 import hydralit as hy
 from src.JobApplicationForm import JobApplicationForm
 import requests as req
+from src.Footer import Footer
 
 
 def show_home_page():
@@ -33,14 +34,8 @@ def show_contact_us_page():
                 st.error("Error submitting the form. Please try again.")
 
     with col2:
-        google_maps_api_key = "AIzaSyBKm4__7J3jfjcBk3c978pqMUVLvRnBXDs"
-        office_address = "Sobha Dream Gardens Bangalore"
-        encoded_address = "+".join(office_address.split(" "))
-        google_maps_url = f"https://www.google.com/maps/embed/v1/place?key={google_maps_api_key}&q={encoded_address}"
         # Google Map Location
         hy.markdown(
-
-
             """
             ## Google Map Location
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.0081116385077!2d77.63872497565771!3d13.098672312078355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae19261265aa95%3A0xcc6de8ac0fc6561f!2sSOBHA%20Dream%20Gardens%20(Residential%20Apartments%20in%20Thanisandra)!5e0!3m2!1sen!2sin!4v1703934449813!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -81,8 +76,6 @@ def show_contact_us_page():
 def show_about_us_page():
     # Customize this function to display content for the About Us page
     # Vision and Mission of the Company
-    st.title("About Us - The Data Processor AI")
-
     st.write(
         "At The Data Processor AI, we are on a mission to transform the way businesses leverage data for "
         "decision-making. Our vision is to be a pioneering force in the field of data analytics, providing "
@@ -114,9 +107,6 @@ def show_about_us_page():
         "solutions for leading businesses across various industries. Our commitment to excellence has been recognized "
         "through awards and accolades.")
 
-    # Display team or additional information about the company
-    # ...
-
 
 def show_careers_page():
     st.title("Careers at The Data Processor AI")
@@ -136,36 +126,42 @@ def show_careers_page():
         job_application.handle_job_form_submission()
 
 
+
 def main():
     print("Initializing PageConfig...")
     page_config = PageConfig("Data Processor AI", "resources/favicon.png")
     page_config.configure_page()
+    # Add custom CSS for equal spacing
     margins_css = """
-                    <style>
-                        .main > div {
-                            padding-top: 0rem;
-                            padding-right: 0rem;
+            <style>
+                .streamlit-container {
+                    margin: 20px; /* Adjust the margin value as needed */
+                }
+                .main > div {
+                            padding-top: 20px;
+                            padding-right: 20px;
                         }
-                    </style>
-                    """
-
+            </style>
+        """
     st.markdown(margins_css, unsafe_allow_html=True)
-    col1, col2 = st.columns([1, 4])
+    col1, col2 = st.columns([1, 3])
     with col1:
         st.image("resources/logo.png", width=200)
 
     with col2:
-
+        main_color = '#fa4c7c'
         st.markdown(
-            """
-            <style>
-                .streamlit-container {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: right;
-                }
-            </style>
-            """,
+            f"""
+                <style>
+                    .streamlit-container {{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: right;
+                        justify-content: flex-end;  /* Align to the right */
+                        background-color: {main_color};  /* Set the background color here */
+                    }}
+                </style>
+                """,
             unsafe_allow_html=True,
         )
 
@@ -190,6 +186,11 @@ def main():
             show_careers_page()
 
     app.run()
+
+# Add the footer at the end of the app
+    Footer.show_footer()
+    # Add a horizontal line below col2
+    st.markdown("<hr>", unsafe_allow_html=True)
 
 
 if __name__ == "__main__":
