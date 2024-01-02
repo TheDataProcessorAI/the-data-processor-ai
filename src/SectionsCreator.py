@@ -7,23 +7,29 @@ from src.AssetsLoader import AssetsLoader
 def create_company_header():
     # -- HEADER -- #
     # insert logo stored in resources folder here
-    st.subheader("Unlocking Business Potential with AI-Powered Insights. 🤖")
-    st.markdown("[Learn More](https://thedataprocessor.ai/)")
+    st.subheader("Unlocking Business Potential with AI-Powered Insights.")
 
 
 def create_generative_ai_section():
     # -- GENERATIVE AI CAPABILITIES -- #
-    st.header("Generative AI Capabilities")
-    st.write(
-        "Explore our cutting-edge Generative AI capabilities that enable businesses to harness the power of artificial intelligence for creative and innovative solutions.")
-    st.write("""
-        - **Creative Content Generation:** Leverage our Generative AI models to create high-quality and engaging content, from images to text.
-        - **Innovative Design Solutions:** Drive innovation in design with AI-generated concepts and prototypes.
-        - **Personalized Recommendations:** Provide personalized recommendations to users based on their preferences and behavior.
-        - **Automated Creative Processes:** Streamline creative workflows by automating repetitive tasks using Generative AI.
-        - **Customized AI Models:** Develop custom Generative AI models tailored to your specific business needs.
-    """)
-    st.write("[Learn More](https://thedataprocessor.ai/generative-ai)")
+    col1, col2 = st.columns(2)
+    with col1:
+        st.header("Generative AI Capabilities")
+        st.write(
+            "Explore our cutting-edge Generative AI capabilities that enable businesses to harness the power of artificial intelligence for creative and innovative solutions.")
+        st.write("""
+            - **Creative Content Generation:** Leverage our Generative AI models to create high-quality and engaging content, from images to text.
+            - **Innovative Design Solutions:** Drive innovation in design with AI-generated concepts and prototypes.
+            - **Personalized Recommendations:** Provide personalized recommendations to users based on their preferences and behavior.
+            - **Automated Creative Processes:** Streamline creative workflows by automating repetitive tasks using Generative AI.
+            - **Customized AI Models:** Develop custom Generative AI models tailored to your specific business needs.
+        """)
+    with col2:
+        assets_loader = AssetsLoader()
+        lottie_animations = assets_loader.load_assets()
+        st_lottie(lottie_animations[4], speed=1, height=400)
+
+
 
 
 class SectionsCreator:
@@ -47,7 +53,6 @@ class SectionsCreator:
             - Analytics expertise to navigate your business strategies with unparalleled precision and confidence.
             - Every decision you make is backed by the most relevant and advanced data analytics.
         """)
-        st.write("[Learn More](https://thedataprocessor.ai/)")
 
     def create_our_services_section(self, lottie_animations):
         # -- OUR SERVICES -- #
