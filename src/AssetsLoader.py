@@ -18,6 +18,7 @@ class AssetsLoader:
             "https://lottie.host/726cc09d-84ee-4650-9eba-5b8d50bfa271/azHdrg5nqM.json",
             "https://lottie.host/29515f58-9b07-4c15-be29-a670cb4d86dd/fzsh1V2crs.json",
             "https://lottie.host/6f68c090-12b0-45b3-89ed-1a6fa2979241/9le9ajiq8W.json",
+            "https://lottie.host/6a859e97-0927-4733-9df4-ac9319242a5a/rdcomOqZyd.json"
         ]
 
         lottie_animations = [AssetsLoader.load_lottieurl(url) for url in lottie_urls]

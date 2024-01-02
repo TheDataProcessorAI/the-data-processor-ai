@@ -126,7 +126,6 @@ def show_careers_page():
         job_application.handle_job_form_submission()
 
 
-
 def main():
     print("Initializing PageConfig...")
     page_config = PageConfig("Data Processor AI", "resources/favicon.png")
@@ -146,7 +145,7 @@ def main():
     st.markdown(margins_css, unsafe_allow_html=True)
     col1, col2 = st.columns([1, 3])
     with col1:
-        st.image("resources/logo.png", width=200)
+        st.image("resources/2.png", width=200)
 
     with col2:
         main_color = '#fa4c7c'
@@ -154,7 +153,7 @@ def main():
             f"""
                 <style>
                     .streamlit-container {{
-                        display: flex;
+                        display: flex;ig
                         flex-direction: column;
                         align-items: right;
                         justify-content: flex-end;  /* Align to the right */
@@ -165,7 +164,10 @@ def main():
             unsafe_allow_html=True,
         )
 
-        app = hy.HydraApp(title='The Data Processor AI')
+        over_theme = {'txc_inactive': 'None', 'menu_background': 'transparent', 'txc_active': 'None',
+                      'option_active': 'None', }
+
+        app = hy.HydraApp(title='The Data Processor AI', navbar_theme=over_theme,  navbar_sticky=True, use_loader=False, hide_streamlit_markers=True, banner_spacing =[100, 100, 100])
         if app is None:
             print("Error: 'app' is None. Check HydraApp initialization.")
 
@@ -187,7 +189,7 @@ def main():
 
     app.run()
 
-# Add the footer at the end of the app
+    # Add the footer at the end of the app
     Footer.show_footer()
     # Add a horizontal line below col2
     st.markdown("<hr>", unsafe_allow_html=True)
